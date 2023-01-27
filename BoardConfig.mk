@@ -47,14 +47,16 @@ ifeq ($(TARGET_KERNEL_VERSION), 4.9)
 endif
 #BOARD_KERNEL_CMDLINE += androidboot.selinux=permissive
 BOARD_KERNEL_IMAGE_NAME := Image.gz-dtb
-BOARD_KERNEL_PAGESIZE :=  2048
+BOARD_KERNEL_PAGESIZE := 2048
 BOARD_MKBOOTIMG_ARGS := --ramdisk_offset 0x01000000 --tags_offset 0x00000100
 TARGET_COMPILE_WITH_MSM_KERNEL := true
 TARGET_KERNEL_CONFIG := santoni_treble_defconfig
 TARGET_KERNEL_SOURCE := kernel/xiaomi/msm8937
 TARGET_KERNEL_VERSION := 4.9
 TARGET_KERNEL_CLANG_COMPILE := true
-TARGET_KERNEL_CLANG_PATH := $(shell pwd)/prebuilts/clang/host/linux-x86/clang-cosmic
+# Used https://github.com/ClangBuiltLinux/tc-build
+# Tree - https://github.com/llvm/llvm-project/commit/8dfdcc7b7bf66834a761bd8de445840ef68e4d1a
+TARGET_KERNEL_CLANG_PATH := $(shell pwd)/prebuilts/clang/host/linux-x86/clang-1507
 TARGET_KERNEL_CROSS_COMPILE_PREFIX := aarch64-linux-gnu-
 TARGET_KERNEL_ADDITIONAL_FLAGS := LLVM=1 HOSTCFLAGS="-fuse-ld=lld -Wno-unused-command-line-argument"
 
