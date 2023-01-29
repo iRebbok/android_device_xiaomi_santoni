@@ -58,7 +58,7 @@ TARGET_KERNEL_CLANG_COMPILE := true
 # Tree - https://github.com/llvm/llvm-project/commit/8dfdcc7b7bf66834a761bd8de445840ef68e4d1a
 TARGET_KERNEL_CLANG_PATH := $(shell pwd)/prebuilts/clang/host/linux-x86/clang-1507
 TARGET_KERNEL_CROSS_COMPILE_PREFIX := aarch64-linux-gnu-
-TARGET_KERNEL_ADDITIONAL_FLAGS := LLVM=1 HOSTCFLAGS="-fuse-ld=lld -Wno-unused-command-line-argument"
+TARGET_KERNEL_ADDITIONAL_FLAGS := LLVM=1 KCFLAGS="-Wno-error=strict-prototypes" HOSTCFLAGS="-fuse-ld=lld -Wno-unused-command-line-argument"
 
 # ANT
 BOARD_ANT_WIRELESS_DEVICE := "vfs-prerelease"
