@@ -15,20 +15,11 @@
 # limitations under the License.
 #
 
-PRODUCT_NAME := cherish_santoni
-
-# Inherit some props from Cherish
-CHERISH_BUILD_TYPE := OFFICIAL
-PRODUCT_SYSTEM_DEFAULT_PROPERTIES += \
-    ro.cherish.maintainer=ꪖ​ꪀ𝘴ꫝ|邪惡的
-TARGET_INCLUDE_LIVE_WALLPAPERS := false
-TARGET_SUPPORTS_QUICK_TAP := true
-
-# Boot animation
-TARGET_BOOT_ANIMATION_RES := 720
+LINEAGE_BUILD := santoni
+PRODUCT_NAME := lineage_santoni
 
 # Inherit common santoni.
 $(call inherit-product, $(LOCAL_PATH)/common_santoni.mk)
 
 # Inherit some common sweet stuff.
-$(call inherit-product, vendor/cherish/config/common_full_phone.mk)
+$(call inherit-product, vendor/lineage/config/common_full_phone.mk)
